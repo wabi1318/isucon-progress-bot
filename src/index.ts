@@ -3,11 +3,14 @@ interface Env {
 }
 
 const PROGRESS_REMINDER = [
-  "やった",
-  "やる",
-  "わかった",
-  "まだわかんなかった",
-  "ひとこと",
+  "今日の進捗にリアクションしてください。",
+  "",
+  "✅ やった",
+  "🎯 やる",
+  "💡 わかった",
+  "🤔 まだわかんなかった",
+  "",
+  "ひとことはスレッドに返信してください。",
 ].join("\n");
 
 const postProgressReminder = async (webhookUrl: string): Promise<void> => {
