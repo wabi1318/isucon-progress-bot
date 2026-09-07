@@ -2,27 +2,16 @@ interface Env {
   DISCORD_WEBHOOK_URL: string;
 }
 
-const PROGRESS_POLL = {
-  poll: {
-    question: {
-      text: "今日のISUCON進捗（複数選択可）\nひとことはこの投票メッセージのスレッドに返信してください。",
-    },
-    answers: [
-      { poll_media: { text: "やった", emoji: { name: "✅" } } },
-      { poll_media: { text: "やる", emoji: { name: "🎯" } } },
-      { poll_media: { text: "わかった", emoji: { name: "💡" } } },
-      {
-        poll_media: {
-          text: "まだわかんなかった",
-          emoji: { name: "🤔" },
-        },
-      },
-    ],
-    duration: 24,
-    allow_multiselect: true,
-    layout_type: 1,
-  },
-} as const;
+const PROGRESS_REMINDER = [
+  "今日の進捗にリアクションしてください。",
+  "",
+  "✅ やった",
+  "🎯 やる",
+  "💡 わかった",
+  "🤔 まだわかんなかった",
+  "",
+  "ひとことはスレッドに返信してください。",
+].join("\n");
 
 const postProgressReminder = async (webhookUrl: string): Promise<void> => {
   const webhookRequestUrl = new URL(webhookUrl);
@@ -33,7 +22,10 @@ const postProgressReminder = async (webhookUrl: string): Promise<void> => {
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify(PROGRESS_POLL),
+    body: JSON.stringify({
+      content: PROGRESS_REMINDER,
+      allowed_mentions: { parse: [] },
+    }),
   });
 
   if (!response.ok) {
