@@ -74,7 +74,7 @@ Discordへ投票が投稿され、`YYYY/MM/DD ISUCON進捗共有`という公開
 ## デプロイ
 
 ```bash
-pnpm deploy
+pnpm run deploy
 ```
 
 `wrangler.jsonc`のCron TriggerはUTCで指定しています。`0 12 * * *`は日本時間の毎日21:00です。
@@ -82,5 +82,5 @@ pnpm deploy
 デプロイ後の実行結果は次のコマンドで確認できます。
 
 ```bash
-pnpm tail
+pnpm run tail
 ```
