@@ -25,11 +25,13 @@ const PROGRESS_POLL = {
 const PROGRESS_MEMO_TEMPLATE = [
   "このテンプレートをコピーして、進捗を書いてください。",
   "",
+  "```",
   "やった：",
   "やる（明日以降）：",
   "わかった：",
   "まだわかんなかった：",
   "ひとこと：",
+  "```",
 ].join("\n");
 
 const formatThreadName = (scheduledTime: number): string => {
