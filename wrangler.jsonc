@@ -1,0 +1,9 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "isucon-progress-bot",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-08-31",
+  "triggers": {
+    "crons": ["0 12 * * *"]
+  }
+}

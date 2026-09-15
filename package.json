@@ -1,0 +1,18 @@
+{
+  "name": "isucon-progress-bot",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@9.13.0",
+  "scripts": {
+    "check": "tsc --noEmit",
+    "dev": "wrangler dev --test-scheduled",
+    "deploy": "wrangler deploy",
+    "tail": "wrangler tail"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "5.20260830.1",
+    "typescript": "7.0.2",
+    "wrangler": "4.127.1"
+  }
+}
