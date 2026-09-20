@@ -6,7 +6,7 @@ interface Env {
 const DISCORD_API_BASE_URL = "https://discord.com/api/v10";
 const DISCORD_BOT_USER_AGENT =
   "DiscordBot (https://github.com/wabi1318/isucon-progress-bot, 1.0.0)";
-const POLL_DURATION_HOURS = 24;
+const POLL_DURATION_HOURS = 12;
 const THREAD_AUTO_ARCHIVE_DURATION_MINUTES = 1440;
 
 const PROGRESS_POLL = {
